@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Colors Display</title>
+        <style>
+            body{
+                background-color: white;
+                text-align: left;
+            }
+            .colorWord{
+                width: 200px; height: 105px;
+                background-color: white; color: black;
+                text-align: center; font-size: 50px; font-family: Arial, Helvetica, sans-serif;
+                border: 2px solid black; border-radius: 0px;
+
+                display: inline-block;
+                margin: 5px;
+                line-height: 105px;
+                vertical-align: middle;
+            }
+            .color{
+                width: 105px; height: 105px;
+                border: 2px solid black; border-radius: 0px;
+
+                display: inline-block;
+                margin: 5px;
+                vertical-align: middle;
+            }
+            hr{
+                height: 5px;
+                background-color: black;
+                border: 5px solid black;
+
+                margin: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            var colorWords=[
+                "Black",
+                "White",
+                "Red",
+                "Green",
+                "Yellow",
+                "Blue",
+                "Brown",
+                "Orange",
+                "Pink",
+                "Purple",
+                "Gray"
+            ];
+            var colors=[
+                [ // black
+                    "rgb(0, 0, 0)"
+                ],
+                [ // white
+                    "rgb(255, 255, 255)"
+                ],
+                [ // red
+                    "rgb(255, 0, 0)",
+                    "rgb(127, 0, 0)"
+                ],
+                [ // green
+                    "rgb(127, 255, 191)",
+                    "rgb(0, 127, 95)",
+                    "rgb(0, 127, 0)",
+                    "rgb(63, 127, 95)",
+                    "rgb(127, 127, 0)",
+                    "rgb(0, 255, 0)",
+                    "rgb(0, 255, 191)"
+                ],
+                [ // yellow
+                    "rgb(255, 191, 0)",
+                    "rgb(255, 255, 0)"
+                ],
+                [ // blue
+                    "rgb(0, 191, 255)",
+                    "rgb(127, 191, 255)",
+                    "rgb(0, 127, 255)",
+                    "rgb(0, 0, 255)",
+                    "rgb(0, 63, 127)",
+                    "rgb(0, 95, 127)",
+                    "rgb(0, 255, 255)"
+                ],
+                [ // brown
+                    "rgb(127, 63, 0)",
+                    "rgb(127, 95, 63)"
+                ],
+                [ // orange
+                    "rgb(255, 127, 0)"
+                ],
+                [ // pink
+                    "rgb(255, 0, 127)",
+                    "rgb(255, 0, 255)",
+                    "rgb(255, 127, 191)",
+                    "rgb(255, 191, 191)"
+                ],
+                [ // purple
+                    "rgb(191, 127, 255)",
+                    "rgb(95, 63, 127)",
+                    "rgb(127, 0, 127)",
+                    "rgb(127, 0, 255)"
+                ],
+                [ // gray
+                    "rgb(127, 127, 127)"
+                ]
+            ];
+            var other=[
+                "rgb(255, 191, 127)",
+                "rgb(255, 159, 127)",
+                "rgb(127, 0, 63)",
+                "rgb(63, 63, 127)",
+                "rgb(127, 63, 95)",
+                "rgb(127, 79, 63)",
+                "rgb(63, 95, 127)",
+                "rgb(127, 95, 95)",
+                "rgb(127, 127, 255)",
+                "rgb(127, 111, 63)",
+                "rgb(255, 127, 127)",
+                "rgb(255, 223, 127)",
+                "rgb(127, 95, 0)",
+                "rgb(127, 63, 63)",
+                "rgb(0, 127, 127)"
+            ];
+
+            for(var i=0; i<colorWords.length; i++){
+                var colorWord=document.createElement("label");
+                document.body.appendChild(colorWord);
+                colorWord.className="colorWord";
+                colorWord.innerHTML=colorWords[i];
+
+                for(var j=0; j<colors[i].length; j++){
+                    var color=document.createElement("label");
+                    document.body.appendChild(color);
+                    color.className="color";
+                    color.style.backgroundColor=colors[i][j];
+                }
+
+                var line=document.createElement("hr");
+                document.body.appendChild(line);
+            }
+
+            for(var i=0; i<other.length; i++){
+                var color=document.createElement("label");
+                document.body.appendChild(color);
+                color.className="color";
+                color.style.backgroundColor=other[i];
+            }
+        </script>
+    </body>
+</html>
